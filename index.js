@@ -22,11 +22,8 @@ function checkServerTime(error, callback) {
 
         console.log(diff);
 
-        if(client <= -diff && client >= diff) {
-            return callback(null, true);
-        }
+        return callback(null, client <= -diff && client >= diff);
 
-        return callback(null, false);
     }).fail(function(res, error) {
         return callback('Server Error');
     });
