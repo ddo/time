@@ -18,10 +18,11 @@ function checkServerTime(error, callback) {
         var server = res.milliseconds_since_epoch;
         var client = (new Date()).getTime();
 
-        console.log(server, client);
-        console.log(server - client);
+        var diff = server - client;
 
-        if(client <= server + error && client >= server - error) {
+        console.log(diff);
+
+        if(client <= -diff && client >= diff) {
             return callback(null, true);
         }
 
