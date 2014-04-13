@@ -1,4 +1,4 @@
-server-time
+time
 ===========
 
 compare client and server time
