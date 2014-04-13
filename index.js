@@ -7,15 +7,15 @@
 function checkServerTime(error, callback) {
     error *= 1000;
     $.ajax({
-        url: 'http://time.jsontest.com/',
+        url: '//server-time.herokuapp.com',
         cache: false,
         timeout: error
     }).done(function(res) {
-        if(!res.milliseconds_since_epoch) {
+        if(!res.timestamp_millisecond) {
             return callback('Server Error');
         }
 
-        var server = res.milliseconds_since_epoch;
+        var server = res.timestamp_millisecond;
         var client = (new Date()).getTime();
 
         var diff = server - client;
