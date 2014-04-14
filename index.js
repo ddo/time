@@ -22,14 +22,22 @@ function time(accuracy) {
     };
 }
 
+/**
+ * currently time using jquery.ajax
+ * @param  {Object}   data     ajax option
+ * @param  {Function} callback
+ */
 time.prototype.request = function(data, callback) {
-    $.ajax(data).done(function(res) {
+    ajax(data).done(function(res) {
         return callback(null, res);
     }).fail(function(res, err) {
         return callback(err);
-    })
+    });
 };
 
+/**
+ * set server time remote
+ */
 time.prototype.setRemote = function(remote) {
     this.remote = remote;
 };
