@@ -80,3 +80,7 @@ Time.prototype.check = function(callback) {
         return callback(null, offset <= self.accuracy);
     })
 }
+
+if(typeof module !== 'undefined' && module.exports) {
+    module.exports = time;
+}
