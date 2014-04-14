@@ -1,0 +1,16 @@
+{
+  "name": "time",
+  "repo": "ddo/time",
+  "description": "compare client and server time",
+  "version": "0.0.1",
+  "keywords": [
+    "time",
+    "client",
+    "sync"
+  ],
+  "license": "MIT",
+  "main": "time.js",
+  "scripts": [
+    "time.js"
+  ]
+}
