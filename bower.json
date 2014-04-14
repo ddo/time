@@ -1,0 +1,16 @@
+{
+  "name": "time",
+  "main": "time.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ddo/time",
+  "authors": [
+    "Ddo <ddo.me>"
+  ],
+  "description": "compare client and server time",
+  "keywords": [
+    "time",
+    "client",
+    "sync"
+  ],
+  "license": "MIT"
+}
