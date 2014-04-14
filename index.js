@@ -1,9 +1,9 @@
 /**
  * @param {Int} +-accuracy in millisecond
  */
-function Time(accuracy) {
-    if(!(this instanceof Time)) {
-        return new Time(accuracy);
+function time(accuracy) {
+    if(!(this instanceof time)) {
+        return new time(accuracy);
     }
 
     this.accuracy = accuracy;
@@ -13,7 +13,7 @@ function Time(accuracy) {
     };
 }
 
-Time.prototype.request = function(data, callback) {
+time.prototype.request = function(data, callback) {
     $.ajax(data).done(function(res) {
         return callback(null, res);
     }).fail(function(res, err) {
@@ -21,7 +21,7 @@ Time.prototype.request = function(data, callback) {
     })
 };
 
-Time.prototype.setRemote = function(remote) {
+time.prototype.setRemote = function(remote) {
     this.remote = remote;
 };
 
@@ -30,7 +30,7 @@ Time.prototype.setRemote = function(remote) {
  * @param {Function} callback function
  * @return {Int} offset
  */
-Time.prototype.getOffSet = function(callback) {
+time.prototype.getOffSet = function(callback) {
     var self = this;
     //to calculate the loading time
     var now = (new Date()).getTime();
@@ -64,7 +64,7 @@ Time.prototype.getOffSet = function(callback) {
  * @param {Function} callback function
  * @return {Boolean}
  */
-Time.prototype.check = function(callback) {
+time.prototype.check = function(callback) {
     var self = this;
 
     this.getOffSet(function(err, offset) {

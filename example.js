@@ -1,11 +1,9 @@
-var time = Time(1000);
+var t = time(1000);
 
-time.getOffSet(function(err, offset) {
-    console.log('getOffSet()');
+t.getOffSet(function(err, offset) {
     console.log(err, offset);
 });
 
-time.check(function(err, good) {
-    console.log('check()');
+t.check(function(err, good) {
     console.log(err, good);
 });
