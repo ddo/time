@@ -1,3 +1,12 @@
+var ajax;
+
+if(typeof module !== 'undefined' && module.exports) {
+    module.exports = time;
+    ajax = require('jquery').ajax;
+} else {
+    ajax = $.ajax;
+}
+
 /**
  * @param {Int} +-accuracy in millisecond
  */
@@ -79,8 +88,4 @@ time.prototype.check = function(callback) {
 
         return callback(null, offset <= self.accuracy);
     })
-}
-
-if(typeof module !== 'undefined' && module.exports) {
-    module.exports = time;
 }
