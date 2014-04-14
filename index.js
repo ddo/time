@@ -65,7 +65,7 @@ time.prototype.getOffSet = function(callback) {
 
         return callback(null, client - server);
     });
-}
+};
 
 /**
  * compare client and server time
@@ -87,5 +87,5 @@ time.prototype.check = function(callback) {
         console.log('Offset', offset);
 
         return callback(null, offset <= self.accuracy);
-    })
-}
+    });
+};
